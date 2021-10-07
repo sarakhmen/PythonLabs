@@ -6,7 +6,7 @@ class Customer:
     This class represents a customer entity
 
     """
-    def __init__(self, surname, name, patronymic, mobile_phone):
+    def __init__(self, surname='Unknown', name='Unknown', patronymic='Unknown', mobile_phone='+380(00)-000-00-00'):
         self.surname = surname
         self.name = name
         self.patronymic = patronymic
@@ -52,3 +52,7 @@ class Customer:
         if not pattern.match(mobile_phone):
             raise ValueError
         self.__mobile_phone = mobile_phone
+
+    def __str__(self):
+        return f'Customer [surname = {self.surname}, name = {self.name}, patronymic = {self.patronymic}, ' \
+               f'mobile_phone = {self.mobile_phone}]'

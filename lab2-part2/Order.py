@@ -8,7 +8,7 @@ class Order:
 
     """
 
-    def __init__(self, customer, *products):
+    def __init__(self, customer=Customer(), *products):
         self.customer = customer
         self.products = products
 
@@ -18,10 +18,9 @@ class Order:
 
     @products.setter
     def products(self, products):
-        for product in products:
-            if not isinstance(product, Product):
-                raise TypeError("Products must be of Product type")
-        self.__products = products
+        if any(not isinstance(product, Product) for product in products):
+            raise TypeError("Products must be of Product type")
+        self.__products = list(products)
 
     @property
     def customer(self):
@@ -36,6 +35,18 @@ class Order:
     def get_total_order_value(self):
         total_price = 0
         for product in self.products:
-            total_price =+ product.price
+            total_price += product.price
         return total_price
+
+    def add_product(self, product):
+        if not isinstance(product, Product):
+            raise TypeError("Product must be of Product type")
+        self.products.append(product)
+
+    def del_product(self, product):
+        self.products.remove(product)
+
+    def __str__(self):
+        products_str = ',\n\t'.join(map(str, self.products))
+        return f'Order [customer = {self.customer}, products:\n\t{products_str}\n]'
 

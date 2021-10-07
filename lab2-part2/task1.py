@@ -10,6 +10,15 @@ def main():
         customer = Customer('Sarakhman', 'Artur', 'Olegovych', '+380(97)-126-62-62')
         order = Order(customer, phone, video_card)
         print('Total order value for ' + str(customer.name) + ' = ' + str(order.get_total_order_value()))
+        print(video_card)
+        print(customer)
+        print(order)
+        new_product = Product(100, 'something', 'some dimensions')
+        order.add_product(new_product)
+        print(order)
+        copy_of_new_product = Product(100, 'something', 'some dimensions')
+        order.del_product(copy_of_new_product)
+        print(order)
     except Exception as e:
         print(e)
 

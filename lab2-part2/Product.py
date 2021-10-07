@@ -3,7 +3,7 @@ class Product:
     This class represents a product entity
 
     """
-    def __init__(self, price, description, dimensions):
+    def __init__(self, price, description="N/A", dimensions="N/A"):
         self.price = price
         self.description = description
         self.dimensions = dimensions
@@ -39,6 +39,13 @@ class Product:
         if not isinstance(dimensions, str):
             raise TypeError("Dimensions must be a string")
         self.__dimensions = dimensions
+
+    def __eq__(self, other):
+        if isinstance(other, Product):
+            return self.price == other.price \
+                   and self.description == other.description \
+                   and self.dimensions == other.dimensions
+        return False
 
     def __str__(self):
         return f'Product [price = {self.price}, description = {self.description}, dimensions = {self.dimensions}]'

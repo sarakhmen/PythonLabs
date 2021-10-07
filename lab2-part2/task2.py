@@ -13,23 +13,22 @@ class TextProcessor:
     """
 
     def __init__(self, file_name):
-        num_words = 0
-        num_lines = 0
-        num_chars = 0
-        num_spaces = 0
+        if not os.path.exists(file_name):
+            raise FileNotFoundError('Your file not found')
+        self.__file_name = file_name
+        self.__num_words = 0
+        self.__num_lines = 0
+        self.__num_chars = 0
+        self.__num_spaces = 0
 
-        with open(file_name, 'r') as f:
+    def parse_text(self):
+        with open(self.__file_name, 'r') as f:
             for line in f:
                 line = line.strip(os.linesep)
-                num_lines = num_lines + 1
-                num_words = num_words + len(line.split())
-                num_chars = num_chars + sum(1 for c in line if not c.isspace())
-                num_spaces = num_spaces + sum(1 for s in line if s.isspace())
-
-        self.__num_words = num_words
-        self.__num_lines = num_lines
-        self.__num_chars = num_chars
-        self.__num_spaces = num_spaces
+                self.__num_lines = self.__num_lines + 1
+                self.__num_words = self.__num_words + len(line.split())
+                self.__num_chars = self.__num_chars + sum(1 for c in line if not c.isspace())
+                self.__num_spaces = self.__num_spaces + sum(1 for s in line if s.isspace())
 
     def get_number_of_words(self):
         return self.__num_words
@@ -48,9 +47,10 @@ if __name__ == '__main__':
     file = 'text.txt'
     try:
         text_processor = TextProcessor(file)
+        text_processor.parse_text()
         print("Number of words in text file: ", text_processor.get_number_of_words())
         print("Number of lines in text file: ", text_processor.get_number_of_lines())
         print("Number of characters in text file: ", text_processor.get_number_of_chars())
         print("Number of spaces in text file: ", text_processor.get_number_of_spaces())
-    except OSError as e:
+    except IOError as e:
         print(e)
