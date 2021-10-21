@@ -63,8 +63,7 @@ class Group:
 
     def highest_average_score(self, number_of_students):
         self.__students.sort(reverse=True, key=lambda x: x.average_grade())
-        return '\t' + '\n\t'.join(map(lambda x: str(x) + '\n\t\twith average score = ' + str(x.average_grade()),
-                                      self.__students[:number_of_students]))
+        return self.__students[:number_of_students]
 
     def __str__(self):
         students = '\n\t'.join(map(str, self.__students))

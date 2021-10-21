@@ -57,8 +57,7 @@ class Student:
 
     def __eq__(self, other):
         if isinstance(other, Student):
-            return self.name == other.name \
-                   and self.surname == other.surname
+            return (self.name, self.surname) == (other.name, other.surname)
         return False
 
     def __hash__(self):
