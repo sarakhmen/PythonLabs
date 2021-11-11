@@ -1,68 +1,16 @@
 [
     {
-        "Ticket": "StudentTicket",
-        "id": 1,
-        "price": 500.0,
-        "event date": "2022-02-10"
-    },
-    {
-        "Ticket": "StudentTicket",
-        "id": 2,
-        "price": 500.0,
-        "event date": "2022-02-10"
-    },
-    {
-        "Ticket": "StudentTicket",
-        "id": 3,
-        "price": 500.0,
-        "event date": "2022-02-10"
-    },
-    {
-        "Ticket": "StudentTicket",
-        "id": 4,
-        "price": 500.0,
-        "event date": "2022-02-10"
-    },
-    {
-        "Ticket": "StudentTicket",
-        "id": 5,
-        "price": 500.0,
-        "event date": "2022-02-10"
-    },
-    {
-        "Ticket": "StudentTicket",
-        "id": 6,
-        "price": 500.0,
-        "event date": "2022-02-10"
-    },
-    {
-        "Ticket": "StudentTicket",
-        "id": 7,
-        "price": 500.0,
-        "event date": "2022-02-10"
-    },
-    {
-        "Ticket": "LateTicket",
-        "id": 8,
-        "price": 1100.0,
-        "event date": "2021-11-14"
-    },
-    {
-        "Ticket": "RegularTicket",
-        "id": 9,
-        "price": 1200.0,
-        "event date": "2021-12-10"
-    },
-    {
         "Ticket": "AdvanceTicket",
-        "id": 10,
+        "event name": "Slack Frontiers 2022",
+        "id": 1,
         "price": 240.0,
         "event date": "2022-02-10"
     },
     {
         "Ticket": "StudentTicket",
-        "id": 11,
-        "price": 500.0,
-        "event date": "2021-11-14"
+        "event name": "WebexOne 2021",
+        "id": 2,
+        "price": 600.0,
+        "event date": "2021-12-10"
     }
 ]
