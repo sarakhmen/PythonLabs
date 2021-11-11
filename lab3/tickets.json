@@ -1,0 +1,38 @@
+[
+    {
+        "Ticket": "StudentTicket",
+        "id": 1,
+        "price": 500.0,
+        "event date": "2022-02-10"
+    },
+    {
+        "Ticket": "StudentTicket",
+        "id": 2,
+        "price": 500.0,
+        "event date": "2022-02-10"
+    },
+    {
+        "Ticket": "StudentTicket",
+        "id": 3,
+        "price": 500.0,
+        "event date": "2022-02-10"
+    },
+    {
+        "Ticket": "StudentTicket",
+        "id": 4,
+        "price": 500.0,
+        "event date": "2022-02-10"
+    },
+    {
+        "Ticket": "StudentTicket",
+        "id": 5,
+        "price": 500.0,
+        "event date": "2022-02-10"
+    },
+    {
+        "Ticket": "StudentTicket",
+        "id": 6,
+        "price": 500.0,
+        "event date": "2022-02-10"
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "IT event": "Big Data and AI Toronto",
+        "id": 1,
+        "standard price": 1000.0,
+        "event date": "2021-11-14"
+    },
+    {
+        "IT event": "WebexOne 2021",
+        "id": 2,
+        "standard price": 1200.0,
+        "event date": "2021-12-10"
+    },
+    {
+        "IT event": "Slack Frontiers 2022",
+        "id": 3,
+        "standard price": 400.0,
+        "event date": "2022-02-10"
+    }
+]
