@@ -34,5 +34,35 @@
         "id": 6,
         "price": 500.0,
         "event date": "2022-02-10"
+    },
+    {
+        "Ticket": "StudentTicket",
+        "id": 7,
+        "price": 500.0,
+        "event date": "2022-02-10"
+    },
+    {
+        "Ticket": "LateTicket",
+        "id": 8,
+        "price": 1100.0,
+        "event date": "2021-11-14"
+    },
+    {
+        "Ticket": "RegularTicket",
+        "id": 9,
+        "price": 1200.0,
+        "event date": "2021-12-10"
+    },
+    {
+        "Ticket": "AdvanceTicket",
+        "id": 10,
+        "price": 240.0,
+        "event date": "2022-02-10"
+    },
+    {
+        "Ticket": "StudentTicket",
+        "id": 11,
+        "price": 500.0,
+        "event date": "2021-11-14"
     }
 ]
