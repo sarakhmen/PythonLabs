@@ -3,10 +3,16 @@ from datetime import date
 
 
 class Ticket(ABC):
-    def __init__(self, ticket_id, price, event_date):
+    def __init__(self, event_name, ticket_id, price, event_date):
+        self.__set_event_name(event_name)
         self.__set_id(ticket_id)
         self.__set_price(price)
         self.__set_event_date(event_date)
+
+    def __set_event_name(self, event_name):
+        if not isinstance(event_name, str):
+            raise TypeError('event name must be of type str')
+        self.__event_name = event_name
 
     def __set_id(self, ticket_id):
         if not isinstance(ticket_id, int):
@@ -26,6 +32,10 @@ class Ticket(ABC):
         if not isinstance(event_date, date):
             raise TypeError('event date must be of type date')
         self.__event_date = event_date
+
+    @property
+    def event_name(self):
+        return self.__event_name
 
     @property
     def ticket_id(self):

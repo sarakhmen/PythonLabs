@@ -43,14 +43,15 @@ class TicketManager:
 
     def get_factory_instance(self):
         if self.__ticket_factory is None:
-            last_ticket = max(self.__tickets, key=lambda x: x.ticket_id)
-            self.__ticket_factory = TicketFactory(last_ticket.ticket_id)
+            ticket_id = max(self.__tickets, key=lambda x: x.ticket_id).ticket_id if len(self.tickets) != 0 else 0
+            self.__ticket_factory = TicketFactory(ticket_id)
         return self.__ticket_factory
 
     @staticmethod
     def __encode_ticket(ticket):
         if isinstance(ticket, Ticket):
             ticket_dict = {"Ticket": ticket.__class__.__name__,
+                           "event name": ticket.event_name,
                            "id": ticket.ticket_id,
                            "price": ticket.price,
                            "event date": ticket.event_date.isoformat()
