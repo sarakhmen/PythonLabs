@@ -15,4 +15,8 @@ course2 = CourseFactory().create_course('course2', 'offsite', [teacher1, teacher
 
 CourseRepository.insert_course(course1)
 CourseRepository.insert_course(course2)
+
+all_cources = CourseRepository.select_all_courses()
+for course in all_cources:
+    print(course)
 print('well done')

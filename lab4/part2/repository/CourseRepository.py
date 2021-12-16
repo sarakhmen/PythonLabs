@@ -32,7 +32,7 @@ class CourseRepository:
             raise TypeError('course must be of type ILocalCourse or IOffsiteCourse')
         with DBManager().sessionmaker() as session:
             teacher_names = list(map(lambda x: x.name, course.teachers))
-            teacher_models = session.query(TeacherModel).filter(TeacherModel.name in teacher_names).all()
+            teacher_models = session.query(TeacherModel).filter(TeacherModel.name.in_(teacher_names)).all()
             for teacher_model in teacher_models:
                 teacher_names.remove(teacher_model.name)
             for teacher_name in teacher_names:
