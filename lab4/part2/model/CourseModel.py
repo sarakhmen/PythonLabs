@@ -2,9 +2,9 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 from lab4.part2.database.DBManager import DBManager
-from lab4.part2.model.TopicModel import TopicModel
-from lab4.part2.model.TeacherModel import TeacherModel
 from lab4.part2.model.CourseToTeacherRelation import CourseToTeacherRelation
+from lab4.part2.model.TeacherModel import TeacherModel
+from lab4.part2.model.TopicModel import TopicModel
 
 
 class CourseModel(DBManager.base):

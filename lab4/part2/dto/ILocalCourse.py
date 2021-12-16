@@ -9,12 +9,6 @@ class ILocalCourse(ICourse):
     def local_course_feature(self):
         raise NotImplementedError
 
-    # def start(self):
-    #     print(f'start {self.name} course')
-    #
-    # def end(self):
-    #     print(f'end {self.name} course')
-
     @property
     def location(self):
         return self.__location

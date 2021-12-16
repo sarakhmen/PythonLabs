@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, ForeignKey
 
 from lab4.part2.database.DBManager import DBManager
 

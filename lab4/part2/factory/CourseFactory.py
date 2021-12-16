@@ -5,7 +5,7 @@ from lab4.part2.dto.impl.OffsiteCourse import OffsiteCourse
 
 class CourseFactory(ICourseFactory):
     @staticmethod
-    def create_course(name, course_type, teachers, topics):
+    def create_course(name, course_type, teachers=None, topics=None):
         if course_type == 'local':
             return LocalCourse(name, teachers, topics)
         elif course_type == 'offsite':

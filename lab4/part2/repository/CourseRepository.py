@@ -1,14 +1,12 @@
-from sqlalchemy.orm import Session
-
 from lab4.part2.database.DBManager import DBManager
-from lab4.part2.dto.ICourse import ICourse
 from lab4.part2.dto.ILocalCourse import ILocalCourse
 from lab4.part2.dto.IOffsiteCourse import IOffsiteCourse
+from lab4.part2.dto.impl.Teacher import Teacher
 from lab4.part2.dto.impl.Topic import Topic
 from lab4.part2.factory.CourseFactory import CourseFactory
 from lab4.part2.model.CourseModel import CourseModel
-from lab4.part2.dto.impl.Teacher import Teacher
 from lab4.part2.model.TeacherModel import TeacherModel
+from lab4.part2.model.TopicModel import TopicModel
 
 
 class CourseRepository:
@@ -41,7 +39,7 @@ class CourseRepository:
                 teacher_models.append(TeacherModel(name=teacher_name))
             topic_models = list()
             for topic in course.topics:
-                topic_models.append(Topic(name=topic.name))
+                topic_models.append(TopicModel(name=topic.name))
             course_model = CourseModel(name=course.name, location=course.location, teachers=teacher_models,
                                        topics=topic_models)
             session.add(course_model)

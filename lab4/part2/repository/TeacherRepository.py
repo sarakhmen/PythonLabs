@@ -24,5 +24,5 @@ class TeacherRepository:
                 .join(CourseModel.teachers).filter(TeacherModel.name == name).all()
             courses = list()
             for course_model in course_models:
-                courses.append(CourseFactory(name=course_model.name, course_type=course_model.location))
+                courses.append(CourseFactory().create_course(name=course_model.name, course_type=course_model.location))
             return courses
