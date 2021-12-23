@@ -1,8 +1,7 @@
-from lab4.part2.dto.impl.Teacher import Teacher
-from lab4.part2.dto.impl.Topic import Topic
-from lab4.part2.factory.CourseFactory import CourseFactory
-from lab4.part2.repository.CourseRepository import CourseRepository
-from lab4.part2.repository.TeacherRepository import TeacherRepository
+from lab4.part2.dto.teacher import Teacher
+from lab4.part2.dto.topic import Topic
+from lab4.part2.factory.course_factory import CourseFactory
+from lab4.part2.repository.course_repository import CourseRepository
 
 teacher1 = Teacher('myTeacher1')
 teacher2 = Teacher('myTeacher2')

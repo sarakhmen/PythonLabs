@@ -6,6 +6,11 @@ from lab4.part2.database.database_config import user, password, host, dialect, d
 
 
 class Singleton(type):
+    """
+        A metaclass that is used to implement singleton pattern
+
+    """
+
     _instances = {}
 
     def __call__(cls, *args, **kwargs):
@@ -15,6 +20,11 @@ class Singleton(type):
 
 
 class DBManager(metaclass=Singleton):
+    """
+        A class that represents a convenient way to get a database session
+
+    """
+
     base = declarative_base()
 
     def __init__(self):

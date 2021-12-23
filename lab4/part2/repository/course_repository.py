@@ -1,17 +1,20 @@
-from lab4.part2.database.DBManager import DBManager
-from lab4.part2.dto.ILocalCourse import ILocalCourse
-from lab4.part2.dto.IOffsiteCourse import IOffsiteCourse
-from lab4.part2.dto.impl.Teacher import Teacher
-from lab4.part2.dto.impl.Topic import Topic
-from lab4.part2.factory.CourseFactory import CourseFactory
-from lab4.part2.model.CourseModel import CourseModel
-from lab4.part2.model.TeacherModel import TeacherModel
-from lab4.part2.model.TopicModel import TopicModel
+from lab4.part2.database.dbmanager import DBManager
+from lab4.part2.dto.course import ILocalCourse, IOffsiteCourse
+from lab4.part2.dto.teacher import Teacher
+from lab4.part2.dto.topic import Topic
+from lab4.part2.factory.course_factory import CourseFactory
+from lab4.part2.model.models import CourseModel, TeacherModel, TopicModel
 
 
 class CourseRepository:
+    """
+    A class to represent a course repository entity
+
+    """
+
     @staticmethod
     def select_all_courses():
+        """Returns all courses from database"""
         courses = list()
         with DBManager().sessionmaker() as session:
             course_models = session.query(CourseModel).all()
@@ -28,6 +31,7 @@ class CourseRepository:
 
     @staticmethod
     def insert_course(course):
+        """Inserts a course into database"""
         if not isinstance(course, (ILocalCourse, IOffsiteCourse)):
             raise TypeError('course must be of type ILocalCourse or IOffsiteCourse')
         with DBManager().sessionmaker() as session:

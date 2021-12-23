@@ -1,13 +1,18 @@
-from lab4.part2.database.DBManager import DBManager
-from lab4.part2.dto.ITeacher import ITeacher
-from lab4.part2.factory.CourseFactory import CourseFactory
-from lab4.part2.model.CourseModel import CourseModel
-from lab4.part2.model.TeacherModel import TeacherModel
+from lab4.part2.database.dbmanager import DBManager
+from lab4.part2.dto.teacher import ITeacher
+from lab4.part2.factory.course_factory import CourseFactory
+from lab4.part2.model.models import TeacherModel, CourseModel
 
 
 class TeacherRepository:
+    """
+    A class to represent a teacher repository entity
+
+    """
+
     @staticmethod
     def insert_teacher(teacher):
+        """Inserts a teacher into database"""
         if not isinstance(teacher, ITeacher):
             raise TypeError('course must be of type ITeacher')
         with DBManager().sessionmaker() as session:
@@ -17,6 +22,7 @@ class TeacherRepository:
 
     @staticmethod
     def select_all_courses_for_teacher_name(name):
+        """Returns all courses for the given teacher name"""
         if not isinstance(name, str):
             raise TypeError('teacher name must be of type str')
         with DBManager().sessionmaker() as session:
